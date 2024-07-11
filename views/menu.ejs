@@ -8,14 +8,37 @@
 <body>
     <%- include('./partials/nav') %>
     <h1>Full Menu</h1>
+    <h2>Mains</h2>
     <ul style="list-style:none">
-        <% items.forEach((item) => { %>
+        <% items.forEach((item) => { if (item.category === 'mains') { %>
             <li><%= item.rating === 5 ? '⭐️' : '' %><%= item.name %><%= item.rating === 5 ? '⭐️' : '' %><br>
                 $<%= item.price %><br>
                 Rating: <%= item.rating %><br>
                 Description: <%= item.details %><br><br>
             </li>      
-        <% }) %>
+        <% }}) %>
+    </ul>
+
+    <h2>Desserts</h2>
+    <ul style="list-style:none">
+        <% items.forEach((item) => { if (item.category === 'desserts') { %>
+            <li><%= item.rating === 5 ? '⭐️' : '' %><%= item.name %><%= item.rating === 5 ? '⭐️' : '' %><br>
+                $<%= item.price %><br>
+                Rating: <%= item.rating %><br>
+                Description: <%= item.details %><br><br>
+            </li>      
+        <% }}) %>
+    </ul>
+
+    <h2>Sides</h2>
+    <ul style="list-style:none">
+        <% items.forEach((item) => { if (item.category === 'sides') { %>
+            <li><%= item.rating === 5 ? '⭐️' : '' %><%= item.name %><%= item.rating === 5 ? '⭐️' : '' %><br>
+                $<%= item.price %><br>
+                Rating: <%= item.rating %><br>
+                Description: <%= item.details %><br><br>
+            </li>      
+        <% }}) %>
     </ul>
 </body>
 </html>
