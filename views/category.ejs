@@ -9,8 +9,8 @@
     <%- include('./partials/nav') %>
 
     <h1>
-        <%= category %>
-    </h1>
+        <%= category[0].toUpperCase() + category.slice(1) %>
+      </h1>
     
     <ul style="list-style:none">
         <% menuItems.forEach(item => { %>
